@@ -1,0 +1,492 @@
+{
+	"info": {
+		"_postman_id": "332790ac-1a35-4146-b880-b2c009bd8faf",
+		"name": "Spring_Transactionality_Workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Load all students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - NON TRANSACTIONAL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Remy\",\r\n        \"age\": 18\r\n    },\r\n    {\r\n        \"name\": \"Alan\",\r\n        \"age\": 20\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertNonTransactional",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertNonTransactional"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - TRANSACTIONAL REQUIRED",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Remy\",\r\n        \"age\": 18\r\n    },\r\n    {\r\n        \"name\": \"Alan\",\r\n        \"age\": 20\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertTransactionalRequired",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertTransactionalRequired"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - TRANSACTIONAL REQUIRES NEW",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Remy\",\r\n        \"age\": 18\r\n    },\r\n    {\r\n        \"name\": \"Alan\",\r\n        \"age\": 20\r\n    },\r\n    {\r\n        \"name\": \"Xi\",\r\n        \"age\": 20\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertTransactionalRequiresNew",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertTransactionalRequiresNew"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - TRANSACTIONAL SUPPORTS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Remy\",\r\n        \"age\": 18\r\n    },\r\n    {\r\n        \"name\": \"Alan\",\r\n        \"age\": 20\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertTransactionalSupports",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertTransactionalSupports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - TRANSACTIONAL MANDATORY",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Remy\",\r\n        \"age\": 18\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertTransactionalMandatory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertTransactionalMandatory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - TRANSACTIONAL NEVER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Remy\",\r\n        \"age\": 18\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertTransactionalNever",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertTransactionalNever"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - TRANSACTIONAL NOT SUPPORTED",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Remy\",\r\n        \"age\": 18\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertTransactionalNotSupported",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertTransactionalNotSupported"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - TRANSACTIONAL NESTED",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Remy\",\r\n        \"age\": 18\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertTransactionalNested",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertTransactionalNested"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - SELF INVOCATION",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Ana\",\r\n        \"age\": 18\r\n    },\r\n    {\r\n        \"name\": \"Vanessa\",\r\n        \"age\": 18\r\n    },\r\n    {\r\n        \"name\": \"ThisIsALongName\",\r\n        \"age\": 18\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertTransactionalSelfInvocation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertTransactionalSelfInvocation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - TRANSACTION TEMPLATE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n     {\r\n        \"name\": \"Remy\",\r\n        \"age\": 18\r\n    },\r\n    {\r\n        \"name\": \"Alan\",\r\n        \"age\": 20\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertTransactionTemplate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertTransactionTemplate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - ISOLATION READ_COMMITTED X1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n     {\r\n        \"id\" : 118,\r\n        \"name\": \"Phantom\",\r\n        \"age\": 20\r\n    }\r\n    \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertIsolationReadCommitted",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertIsolationReadCommitted"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - ISOLATION READ_COMMITTED X2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n     {\r\n        \"id\" : 118,\r\n        \"name\": \"Phantom\",\r\n        \"age\": 23\r\n    }\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertIsolationReadCommitted",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertIsolationReadCommitted"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - ISOLATION REPEATABLE_READ X1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n     {\r\n        \"name\": \"Ana\",\r\n        \"age\": 18\r\n    },\r\n    {\r\n        \"name\": \"Jane\",\r\n        \"age\": 18\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertIsolationRepeatableRead",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertIsolationRepeatableRead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - ISOLATION REPEATABLE_READ X2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n     {\r\n        \"name\": \"Virgil\",\r\n        \"age\": 18\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertIsolationRepeatableRead",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertIsolationRepeatableRead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - ISOLATION SERIALIZABLE X1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n     {\r\n        \"name\": \"Ana\",\r\n        \"age\": 18\r\n    },\r\n    {\r\n        \"name\": \"Jane\",\r\n        \"age\": 18\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertIsolationSerializable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertIsolationSerializable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert student(s) - ISOLATION SERIALIZABLE X2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n     {\r\n        \"name\": \"Jim\",\r\n        \"age\": 18\r\n    }\r\n    \r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/insertIsolationSerializable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"insertIsolationSerializable"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
